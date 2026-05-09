@@ -221,8 +221,8 @@ SpotifyElectron/
 ## 1️⃣ Clonar el repositorio
 
 ```bash
-git clone https://github.com/AntonioMrtz/SpotifyElectron.git
-cd SpotifyElectron
+git clone https://github.com/isairey/AppEscritorioStreamingMusica.git
+cd AppEscritorioStreamingMusica
 ```
 
 ---
