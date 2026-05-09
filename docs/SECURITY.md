@@ -52,7 +52,7 @@ Al enviar un reporte intenta proporcionar:
 Envía tu reporte directamente a:
 
 ```bash
-antoniomartinezfernandez17@gmail.com
+isaireyes2003@gmail.com
 ```
 
 ---
