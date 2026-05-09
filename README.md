@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="160" src="https://raw.githubusercontent.com/AntonioMrtz/SpotifyElectron/main/docs/assets/logo.png" />
+<img width="160" src="https://raw.githubusercontent.com/isairey/AppEscritorioStreamingMusica/main/docs/assets/logo.png" />
 
 # 🎵 Spotify Electron
 
