@@ -111,7 +111,7 @@ Si experimentas o presencias comportamientos inapropiados, puedes reportarlos di
 ## 📩 Contacto
 
 ```bash
-opensource@community.dev
+isaireyes2003@gmail.com
 ```
 
 Todos los reportes serán tratados de manera:
