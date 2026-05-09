@@ -1,0 +1,233 @@
+import '@testing-library/jest-dom';
+import { fireEvent, render } from '@testing-library/react';
+import { act } from 'react';
+
+import ContextMenuSong from 'components/AdvancedUIComponents/ContextMenu/Song/ContextMenuSong';
+import Global from 'global/global';
+import UserType from 'utils/role';
+import { BrowserRouter } from 'react-router-dom';
+import getMockHeaders from 'utils/mockHeaders';
+import * as TokenModule from 'utils/token';
+import { t } from 'i18next';
+
+const playlistName = 'playlisttest';
+const songName = 'songName';
+const artistName = 'artistName';
+const userName = 'prueba';
+const roleUser = UserType.ARTIST;
+
+const artistMockFetch = {
+  name: userName,
+  photo: 'photo',
+  register_date: 'date',
+  password: 'hashpassword',
+  playback_history: [songName],
+  playlists: [playlistName],
+  saved_playlists: [playlistName],
+  uploaded_songs: [songName],
+};
+
+const playlistDTOMockFetch = {
+  name: playlistName,
+  photo: 'playlist',
+  description: 'des',
+  upload_date: 'date',
+  owner: userName,
+  song_names: [],
+};
+
+jest.spyOn(TokenModule, 'getTokenUsername').mockReturnValue(userName);
+jest.spyOn(TokenModule, 'getTokenRole').mockReturnValue(roleUser);
+
+global.fetch = jest.fn((url: string, options: any) => {
+  if (
+    url === `${Global.backendBaseUrl}/playlists/${playlistDTOMockFetch.name}`
+  ) {
+    return Promise.resolve({
+      json: () => playlistDTOMockFetch,
+      status: 200,
+      ok: true,
+      headers: getMockHeaders(),
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
+  if (
+    url ===
+    `${Global.backendBaseUrl}/users/${artistMockFetch.name}/playlist_names`
+  ) {
+    return Promise.resolve({
+      json: () => [playlistName],
+      status: 200,
+      ok: true,
+      headers: getMockHeaders(),
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
+
+  if (options.method === 'DELETE') {
+    return Promise.resolve({
+      json: () => artistMockFetch,
+      status: 202,
+      ok: true,
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
+  if (options.method === 'PUT') {
+    return Promise.resolve({
+      json: () => artistMockFetch,
+      status: 204,
+      ok: true,
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
+
+  if (options.method === 'POST') {
+    return Promise.resolve({
+      json: () => artistMockFetch,
+      status: 201,
+      ok: true,
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
+
+  // In case the URL doesn't match, return a rejected promise
+  return Promise.reject(new Error(`Unhandled URL in fetch mock: ${url}`));
+}) as jest.Mock;
+
+test('Render ContextMenuSong', async () => {
+  const component = await act(() => {
+    return render(
+      <BrowserRouter>
+        <ContextMenuSong
+          playlistName={playlistName}
+          songName={songName}
+          artistName={artistName}
+          handleCloseParent={jest.fn()}
+          refreshPlaylistData={jest.fn()}
+          refreshSidebarData={jest.fn()}
+        />
+      </BrowserRouter>,
+    );
+  });
+  expect(component).toBeTruthy();
+});
+
+test('ContextMenuSong remove from playlist', async () => {
+  const refreshPlaylistDataMock = jest.fn();
+
+  const component = await act(() => {
+    return render(
+      <BrowserRouter>
+        <ContextMenuSong
+          playlistName={playlistName}
+          songName={songName}
+          artistName={artistName}
+          handleCloseParent={jest.fn()}
+          refreshPlaylistData={refreshPlaylistDataMock}
+          refreshSidebarData={jest.fn()}
+        />
+      </BrowserRouter>,
+    );
+  });
+
+  try {
+    const quitarListaButton = component.getByText(
+      t('contextMenuSong.remove-from-playlist'),
+    ); // <-- Replaced with i18n key
+
+    await act(async () => {
+      fireEvent.click(quitarListaButton);
+    });
+
+    expect(refreshPlaylistDataMock).toHaveBeenCalled();
+  } catch (error) {
+    // eslint-disable-next-line jest/no-conditional-expect
+    expect(error).toBeUndefined();
+  }
+});
+
+test('ContextMenuSong create playlist', async () => {
+  const refreshSidebarMock = jest.fn();
+
+  const component = await act(() => {
+    return render(
+      <BrowserRouter>
+        <ContextMenuSong
+          playlistName={playlistName}
+          songName={songName}
+          artistName={artistName}
+          handleCloseParent={jest.fn()}
+          refreshPlaylistData={jest.fn()}
+          refreshSidebarData={refreshSidebarMock}
+        />
+      </BrowserRouter>,
+    );
+  });
+
+  try {
+    const addToListButton = component.getByText(
+      t('contextMenuSong.add-to-playlist'),
+    ); // <-- Replaced with i18n key
+
+    await act(async () => {
+      fireEvent.click(addToListButton);
+    });
+
+    const crearListaButton = component.getByText(
+      t('contextMenuSong.create-playlist'),
+    ); // <-- Replaced with i18n key
+
+    await act(async () => {
+      fireEvent.click(crearListaButton);
+    });
+
+    await act(async () => {
+      fireEvent.click(addToListButton);
+    });
+    expect(refreshSidebarMock).toHaveBeenCalled();
+  } catch (error) {
+    // eslint-disable-next-line jest/no-conditional-expect
+    expect(error).toBeUndefined();
+  }
+});
+
+test('ContextMenuSong add to playlist', async () => {
+  const component = await act(() => {
+    return render(
+      <BrowserRouter>
+        <ContextMenuSong
+          playlistName={playlistName}
+          songName={songName}
+          artistName={artistName}
+          handleCloseParent={jest.fn()}
+          refreshPlaylistData={jest.fn()}
+          refreshSidebarData={jest.fn()}
+        />
+      </BrowserRouter>,
+    );
+  });
+
+  try {
+    const addToListButton = component.getByText(
+      t('contextMenuSong.add-to-playlist'),
+    ); // <-- Replaced with i18n key
+
+    await act(async () => {
+      fireEvent.click(addToListButton);
+    });
+
+    const playlistButton = component.getByText(playlistName);
+
+    await act(async () => {
+      fireEvent.click(playlistButton);
+    });
+  } catch (error) {
+    // eslint-disable-next-line jest/no-conditional-expect
+    expect(error).toBeUndefined();
+  }
+});

@@ -1,0 +1,63 @@
+name: Check OpenAPI schema is updated
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check-openapi-schema-is-updated:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.12
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Install Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install docker-compose -y
+
+      - name: Start dependencies
+        working-directory: Backend/docker/
+        run: |
+          chmod +x build_and_up_dev_backend.sh
+          ./build_and_up_dev_backend.sh
+
+      - name: Rename already existing OpenAPI Schema
+        working-directory: Electron/src/swagger/
+        run: |
+          mv openapi.json openapi-old.json
+
+      - name: Install dependencies and run OpenAPI Schema Generator
+        working-directory: Backend/
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install -r requirements.txt
+          pip install -r requirements-test.txt
+          python -m app.scripts.generate_openapi
+        env:
+          MONGO_URI: mongodb://root:root@localhost:27017/
+          SECRET_KEY_SIGN: "f24e2f3ac557d487b6d879fb2d86f2b2"
+          ARCH: "BLOB"
+          ENV_VALUE: "TEST"
+
+      - name: Compare new and existing OpenAPI Schema
+        working-directory: Electron/src/swagger/
+        run: |
+          python compare_openapi_schema.py openapi-old.json openapi.json
+
+      - name: Shutdown dependencies
+        working-directory: Backend/docker/
+        run: |
+          docker-compose -f docker-compose-dev-backend.yml down

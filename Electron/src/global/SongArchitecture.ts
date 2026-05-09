@@ -1,0 +1,5 @@
+enum SongArchitecture {
+  SERVERLESS_ARCHITECTURE = 'SERVERLESS_ARCHITECTURE',
+  BLOB_ARCHITECTURE = 'BLOB_ARCHITECTURE',
+}
+export default SongArchitecture;

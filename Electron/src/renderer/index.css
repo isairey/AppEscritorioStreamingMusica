@@ -1,0 +1,122 @@
+:root {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Colores globales de la aplicacion */
+
+  --primary-black: #000000;
+  --secondary-black: #121212;
+
+  --pure-white: #ffffff;
+  --primary-white: #dfdfdf;
+  --secondary-white: #b3b3b3;
+  --third-black: #161616;
+  --hover-white: #272727;
+  --separator-white: #3e3e3e;
+  --focus-grey-background: #333;
+
+  --primary-green: #1db954;
+  --secondary-green: #228822;
+
+  --grey: #888;
+
+  --sticky-header-blue: #1e0f44;
+
+  --app-logo-color: #9ad9ea;
+  --app-logo-color-darker: #56afc8;
+
+  /* Sidebar default width */
+  --sidebar-width: 25svw;
+  --sidebar-height: 90svh;
+
+  /* Footer default height */
+  --footer-height: 10svh;
+
+  /* Border radius thumbnail images */
+
+  --border-radius-thumbnails: 8px;
+  --border-radius-rounded-button: 25px;
+
+  /* Font sizes */
+
+  --font-size-song-footer: 1.05rem;
+  --font-size-artist-footer: 0.85rem;
+
+  /* sticky header */
+
+  --pading-top-sticky-header: 3rem;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 0 !important;
+}
+
+h5 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: none !important;
+}
+
+@font-face {
+  font-family: SpotifyCircular;
+  src: url(../assets/fonts/CircularSpotifyText-Bold.otf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: SpotifyCircular;
+  src: url(../assets/fonts/CircularSpotifyText-Medium.otf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: SpotifyCircular;
+  src: url(../assets/fonts/CircularSpotifyText-Light.otf);
+  font-weight: 300;
+}
+
+@media (max-width: 1600px) {
+  :root {
+    --sidebar-height: 88svh;
+
+    /* Footer default height */
+    --footer-height: 12svh !important;
+
+    --font-size-song-footer: 0.85rem !important;
+    --font-size-artist-footer: 0.65rem !important;
+  }
+}

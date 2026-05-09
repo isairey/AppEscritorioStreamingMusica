@@ -1,0 +1,82 @@
+name: Generate OpenAPI Schema and Frontend Client
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  generate-openapi-schema-generate-frontend-client:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          token: ${{ secrets.PAT }}
+
+      - name: Configure Python
+        uses: actions/setup-python@3
+        with:
+          python-version: 3.12
+
+      - name: Install dependencies and run OpenAPI Schema Generator
+        working-directory: Backend/
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install -r requirements.txt
+          pip install -r requirements-test.txt
+          python -m app.scripts.generate_openapi
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
+          SECRET_KEY_SIGN: none
+          ARCH: BLOB
+          ENV_VALUE: TEST
+
+      - name: Generate OpenAPI client Frontend
+        working-directory: Electron/
+        run: |
+          npm install
+          npm run build
+          npm run generate-openapi-client
+
+      - name: Add and commit changes
+        working-directory: Electron/src/
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add swagger/
+          if git commit -m "ci: Update OpenAPI schema and generate Frontend client"; then
+            echo "CHANGES=true" >> $GITHUB_ENV
+          else
+            echo "No changes to commit"
+            echo "CHANGES=false" >> $GITHUB_ENV
+          fi
+
+      - name: Pushing to the protected branch 'master'
+        if: env.CHANGES == 'true'
+        uses: CasperWA/push-protected@v2
+        with:
+          token: ${{ secrets.PAT }}
+          branch: ${{ github.base_ref }}
+
+  frontend-test:
+    runs-on: ubuntu-latest
+    needs: generate-openapi-schema-generate-frontend-client
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Change directory and run test
+        working-directory: Electron
+        run: |
+          npm install
+          npm run build
+          npm test

@@ -1,0 +1,39 @@
+name: Backend Build with MongoDB
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  backend-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Install Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install docker-compose -y
+
+      - name: Start services
+        working-directory: Backend/docker/
+        run: |
+          chmod +x build_and_up_dev_standalone.sh
+          ./build_and_up_dev_standalone.sh
+
+      - name: Run health check
+        run: |
+          sleep 20
+          curl -f localhost:8000/health/
+
+      - name: Shutdown services
+        working-directory: Backend/docker/
+        run: |
+          docker-compose -f docker-compose-dev-standalone.yml down

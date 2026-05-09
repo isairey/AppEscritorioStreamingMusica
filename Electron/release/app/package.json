@@ -1,0 +1,19 @@
+{
+  "name": "spotify-electron",
+  "version": "2.3.0",
+  "description": "A cross-platform, open-source music streaming desktop app that includes Spotify-like core functionalities and user-requested features—such as the ability to upload personal music.",
+  "author": {
+    "name": "Antonio Martinez Fernandez",
+    "email": "antoniomartinezfernandez17@gmail.com",
+    "url": "https://github.com/AntonioMrtz/"
+  },
+  "homepage": "https://github.com/AntonioMrtz/SpotifyElectron",
+  "license": "Attribution-NonCommercial-ShareAlike 4.0 International",
+  "main": "./dist/main/main.js",
+  "scripts": {
+    "rebuild": "node -r ts-node/register ../../.erb/scripts/electron-rebuild.js",
+    "postinstall": "npm run rebuild && npm run link-modules",
+    "link-modules": "node -r ts-node/register ../../.erb/scripts/link-modules.ts"
+  },
+  "dependencies": {}
+}

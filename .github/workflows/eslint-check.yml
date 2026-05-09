@@ -1,0 +1,26 @@
+name: ESLint Check
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  run-frontend-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Change directory and run commands
+        working-directory: Electron
+        run: |
+          npm install
+          npm run lint

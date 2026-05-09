@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Spotify Electron
+Comment=A cross-platform, open-source music streaming desktop app that includes Spotify-like core functionalities and user-requested features—such as the ability to upload personal music.
+Exec=/bin/sh -c  "$HOME/SpotifyElectron/SpotifyElectron.AppImage"
+Icon=spotify-electron-logo
+Terminal=false
+Type=Application
+Categories=Audio;Music;Player;Media;Entertainment;
