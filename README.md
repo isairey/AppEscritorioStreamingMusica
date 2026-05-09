@@ -265,15 +265,7 @@ npm run electron
 
 ---
 
-# 🌐 Sitio Web
 
-## Página Oficial
-
-```bash
-https://antoniomrtz.github.io/SpotifyElectron_Web/
-```
-
----
 
 # 📚 Documentación
 
