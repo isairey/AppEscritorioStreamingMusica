@@ -1,240 +1,411 @@
-# Spotify Electron
+<div align="center">
 
-![Spotify Electron Media Preview](docs/assets/videos/SpotifyElectronReadmePreview.gif)
+<img width="160" src="https://raw.githubusercontent.com/AntonioMrtz/SpotifyElectron/main/docs/assets/logo.png" />
 
+# 🎵 Spotify Electron
 
-## Overview
+### Plataforma de streaming musical multiplataforma con Electron 🚀
 
-[Spotify Electron](https://antoniomrtz.github.io/SpotifyElectron_Web/) is a cross-platform, open-source music streaming desktop app made with Electron-React frontend and Python-FastAPI-MongoDB backend. Our goal is to replicate Spotify's core functionalities while incorporating user-requested features—such as the ability to upload personal music.
+<p align="center">
+  Spotify Electron es una aplicación de streaming musical de escritorio desarrollada con <b>Electron</b>, <b>React</b>, <b>FastAPI</b> y <b>MongoDB</b>, diseñada para replicar una experiencia similar a Spotify con funciones modernas y soporte para música personal.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Electron-DesktopApp-47848F?style=for-the-badge&logo=electron">
+  <img src="https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react">
+  <img src="https://img.shields.io/badge/FastAPI-Backend-009688?style=for-the-badge&logo=fastapi">
+  <img src="https://img.shields.io/badge/MongoDB-Database-47A248?style=for-the-badge&logo=mongodb">
+  <img src="https://img.shields.io/badge/Open%20Source-Yes-brightgreen?style=for-the-badge">
+</p>
+
+<p align="center">
+  <a href="#-preview">Preview</a> •
+  <a href="#-características">Características</a> •
+  <a href="#-arquitectura">Arquitectura</a> •
+  <a href="#-tecnologías-utilizadas">Tecnologías</a> •
+  <a href="#-instalación">Instalación</a>
+</p>
+
+</div>
+
+---
+
+# 🌊 Acerca de Spotify Electron
+
+**Spotify Electron** es una plataforma de streaming musical open source enfocada en escritorio, creada para ofrecer una experiencia moderna, rápida y altamente personalizable.
+
+La aplicación combina:
+
+- ⚛️ Frontend moderno con React + Electron
+- ⚡ Backend rápido con FastAPI
+- ☁️ Base de datos MongoDB
+- 🎵 Streaming multimedia
+- 📂 Subida de música personal
+- 🔄 Arquitectura full stack escalable
+
+El objetivo del proyecto es replicar las funciones esenciales de Spotify mientras añade herramientas más abiertas y personalizables para los usuarios.
+
+---
+
+# 📸 Preview
+
+<div align="center">
+
+<img src="docs/assets/videos/SpotifyElectronReadmePreview.gif" width="1000"/>
+
+</div>
+
+---
+
+# ✨ Características
+
+# 🎧 Streaming Musical
+
+- ▶️ Reproducción multimedia
+- ⏯️ Controles avanzados
+- 🔊 Audio streaming en tiempo real
+- 📂 Biblioteca musical
+- 🎶 Gestión de playlists
+
+---
+
+# 📤 Música Personal
+
+- ☁️ Subida de canciones propias
+- 📁 Gestión multimedia
+- 🎼 Organización de archivos
+- 🎵 Biblioteca personalizada
+- 💾 Almacenamiento persistente
+
+---
+
+# 🖥️ Aplicación Desktop
+
+- 🪟 Windows
+- 🍎 macOS
+- 🐧 Linux
+- ⚡ Electron Cross Platform
+- 🎨 UI moderna inspirada en Spotify
+
+---
+
+# 🔥 Experiencia Moderna
+
+- 🎨 Diseño responsive
+- ⚛️ React Components
+- ⚡ Navegación rápida
+- 🎵 Reproducción continua
+- 🌙 Interfaz elegante
+
+---
+
+# 🏗️ Arquitectura Full Stack
+
+- ⚛️ Frontend Electron + React
+- ⚡ API REST con FastAPI
+- ☁️ MongoDB Database
+- 🔐 Backend escalable
+- 📦 Arquitectura modular
+
+---
+
+# 📸 Arquitectura del Sistema
+
+<div align="center">
+
+<img src="docs/assets/architecture/app_architecture_blob.png" width="1000"/>
+
+</div>
+
+---
+
+# 🎵 Arquitectura Multimedia
+
+<div align="center">
+
+<img src="docs/assets/architecture/song-architecture-blob.png" width="1000"/>
+
+</div>
+
+---
+
+# 🎥 Demo
+
+<div align="center">
 
 https://github.com/user-attachments/assets/1f32fa25-e99f-4cc3-8664-b21bce155934
 
+</div>
 
-## 🌐 Website
+---
 
-Check out our [website](https://antoniomrtz.github.io/SpotifyElectron_Web/). Contributions to the website can made through [its repository](https://github.com/AntonioMrtz/SpotifyElectron_Web).
+# 🛠️ Tecnologías Utilizadas
 
-## 📚 Docs
+## 💻 Frontend
 
-Check the [project documentation](https://antoniomrtz.github.io/SpotifyElectron_Web/docs/).
+<p>
+  <img src="https://skillicons.dev/icons?i=react,electron,html,css,javascript" />
+</p>
 
-## 🔽 Download Installer
+- Electron
+- React.js
+- Redux
+- HTML5
+- CSS3
+- JavaScript
 
-Download the [installer](https://github.com/AntonioMrtz/SpotifyElectron/releases). Follow the [instalation guide](docs/user/user-guides/Installation-Guide.md) for a more in deep explanation about installing and running the app.
+---
 
-## 🔧 Set up and run
+## ⚙️ Backend
 
-### 1. Clone the repository
+<p>
+  <img src="https://skillicons.dev/icons?i=python,fastapi,mongodb" />
+</p>
 
-```console
-git clone https://github.com/AntonioMrtz/SpotifyElectron.git
+- Python
+- FastAPI
+- MongoDB
+- REST API
+
+---
+
+## 🎵 Multimedia
+
+- Audio Streaming
+- Media Playback
+- Upload Music System
+- Playlist Management
+
+---
+
+## ☁️ Base de Datos
+
+- MongoDB Collections
+- User Data
+- Music Metadata
+- Playlists
+- Library Management
+
+---
+
+## 🧰 Herramientas
+
+<p>
+  <img src="https://skillicons.dev/icons?i=git,github,vscode,docker" />
+</p>
+
+- Git & GitHub
+- VS Code
+- Docker
+- Node.js
+
+---
+
+# 📂 Estructura del Proyecto
+
+```bash
+SpotifyElectron/
+│
+├── frontend/               # Aplicación Electron + React
+├── backend/                # API FastAPI
+├── docs/                   # Documentación
+├── assets/                 # Recursos multimedia
+├── database/               # Configuración MongoDB
+└── README.md
 ```
 
-### 2. Set up and run
+---
 
-[⚙️ GLOBAL](docs/developer/SETUP.md)
+# ⚡ Instalación
 
-[🖥 BACKEND](docs/developer/backend/SETUP.md)
+## 1️⃣ Clonar el repositorio
 
-[💻 FRONTEND](docs/developer/frontend/SETUP.md)
+```bash
+git clone https://github.com/AntonioMrtz/SpotifyElectron.git
+cd SpotifyElectron
+```
 
-## 🖐 How to Contribute to the project
+---
 
-Are you interested in contributing to the project? Check our contributing rules and methodologies in
-[our CONTRIBUTING documentation](docs/CONTRIBUTING.md). Also you can check all the contributors to the project [here](docs/CONTRIBUTORS.md).
+# 🔥 Requisitos
 
-## 🎯 Project's goals
+- Node.js 18+
+- Python 3.10+
+- MongoDB
+- npm o yarn
+- Git
 
-Check our [project goals and vision](docs/VISION.md).
+---
 
+# ▶️ Configurar Frontend
 
-## 🏗️ Software Architecture
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-For an in-depth tour of the architecture, refer to the [architecture docs](docs/developer/Architecture.md).
+---
 
-![Spotify_Electron_Software_Diagram](docs/assets/architecture/app_architecture_blob.png)
+# ⚙️ Configurar Backend
 
-### 🎵 Song Architecture
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
 
-![Spotify_Electron_Software_Song_Diagram](docs/assets/architecture/song-architecture-blob.png)
+---
 
-## 🤵🏼 Contributors
+# 🖥️ Ejecutar Aplicación
 
-We're actively looking for new contributors 🙌. Feel free to check our [CONTRIBUTING documentation](docs/CONTRIBUTING.md) for more info.
+```bash
+npm run electron
+```
 
-<table>
-    <tr>
-        <td align="center">
-            <a href="https://github.com/Ferbo12">
-                <img src="https://avatars.githubusercontent.com/u/58307213?v=4" width="90" alt="Ferbo12" />
-                <br />
-                <sub><b>Ferbo12</b></sub>
-            </a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/Ercamarero">
-                <img src="https://avatars.githubusercontent.com/u/91611871?v=4" width="90" alt="Ercamarero" />
-                <br />
-                <sub><b>Ercamarero</b></sub>
-            </a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/KarlosM2">
-                <img src="https://avatars.githubusercontent.com/u/140536436?v=4" width="90" alt="KarlosM2" />
-                <br />
-                <sub><b>KarlosM2</b></sub>
-            </a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/mariete1223">
-                <img src="https://avatars.githubusercontent.com/u/71662461?v=4" width="90" alt="mariete1223" />
-                <br />
-                <sub><b>mariete1223</b></sub>
-            </a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/xiomaraR">
-                <img src="https://avatars.githubusercontent.com/u/81057963?v=4" width="90" alt="xiomaraR" />
-                <br />
-                <sub><b>xiomaraR</b></sub>
-            </a>
-        </td>
-    </tr>
-    <tr>
-        <td align="center">
-            <a href="https://github.com/Javiks-P">
-                <img src="https://avatars.githubusercontent.com/u/72615168?v=4" width="90" alt="Javiks-P" />
-                <br />
-                <sub><b>Javiks-P</b></sub>
-            </a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/raulZC">
-                <img src="https://avatars.githubusercontent.com/u/78484498?v=4" width="90" alt="raulZC" />
-                <br />
-                <sub><b>raulZC</b></sub>
-            </a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/TalhaBinNasir">
-                <img src="https://avatars.githubusercontent.com/u/72547924?v=4" width="90" alt="TalhaBinNasir" />
-                <br />
-                <sub><b>TalhaBinNasir</b></sub>
-            </a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/ariceron5">
-                <img src="https://avatars.githubusercontent.com/u/103110478?v=4" width="90" alt="ariceron5" />
-                <br />
-                <sub><b>ariceron5</b></sub>
-            </a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/aarshgupta24">
-                <img src="https://avatars.githubusercontent.com/u/122194522?v=4" width="90" alt="aarshgupta24" />
-                <br />
-                <sub><b>aarshgupta24</b></sub>
-            </a>
-        </td>
-    </tr>
-    <tr>
-        <td align="center">
-            <a href="https://github.com/ErikMisencik">
-                <img src="https://avatars.githubusercontent.com/u/108632576?v=4" width="90" alt="ErikMisencik" />
-                <br />
-                <sub><b>ErikMisencik</b></sub>
-            </a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/perig99">
-                <img src="https://avatars.githubusercontent.com/u/104552862?v=4" width="90" alt="perig99" />
-                <br />
-                <sub><b>perig99</b></sub>
-            </a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/ObuMan">
-                <img src="https://avatars.githubusercontent.com/u/111461001?v=4" width="90" alt="ObuMan" />
-                <br />
-                <sub><b>ObuMan</b></sub>
-            </a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/gigigimay">
-                <img src="https://avatars.githubusercontent.com/u/51327193?v=4" width="90" alt="gigigimay" />
-                <br />
-                <sub><b>gigigimay</b></sub>
-            </a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/SaurabhGurde">
-                <img src="https://avatars.githubusercontent.com/u/128987288?v=4" width="90" alt="SaurabhGurde" />
-                <br />
-                <sub><b>SaurabhGurde</b></sub>
-            </a>
-        </td>
-    </tr>
-    <tr>
-        <td align="center">
-            <a href="https://github.com/AlesSust">
-                <img src="https://avatars.githubusercontent.com/u/59516393?v=4" width="90" alt="AlesSust" />
-                <br />
-                <sub><b>AlesSust</b></sub>
-            </a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/PavlisinPhoto">
-                <img src="https://avatars.githubusercontent.com/u/120133160?v=4" width="90" alt="PavlisinPhoto" />
-                <br />
-                <sub><b>PavlisinPhoto</b></sub>
-            </a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/berkaykrc">
-                <img src="https://avatars.githubusercontent.com/u/31601800?v=4" width="90" alt="berkaykrc" />
-                <br />
-                <sub><b>berkaykrc</b></sub>
-            </a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/Nishantsingh11">
-                <img src="https://avatars.githubusercontent.com/u/38534128?v=4" width="90" alt="Nishantsingh11" />
-                <br />
-                <sub><b>Nishant Singh</b></sub>
-            </a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/vihanvt">
-                <img src="https://avatars.githubusercontent.com/u/179256419?v=4" width="90" alt="vihanvt" />
-                <br />
-                <sub><b>vihanvt</b></sub>
-            </a>
-        </td>
-    </tr>
-    <tr>
-        <td align="center">
-            <a href="https://github.com/akintewe">
-                <img src="https://avatars.githubusercontent.com/u/85641756?v=4" width="90" alt="akintewe" />
-                <br />
-                <sub><b>akintewe</b></sub>
-            </a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/tlorand2">
-                <img src="https://avatars.githubusercontent.com/u/129942166?v=4" width="90" alt="tlorand2" />
-                <br />
-                <sub><b>tlorand2</b></sub>
-            </a>
-        </td>
-        <td align="center">
-             <a href="https://github.com/Nikhil034">
-                 <img src="https://avatars.githubusercontent.com/u/78275382?v=4" width="90" alt="Nikhil034" />
-                 <br />
-                 <sub><b>Nikhil034</b></sub>
-             </a>
-         </td>
-         <td></td>
-         <td></td>
-    </tr>
- 
-</table>
+---
+
+# 🌐 Sitio Web
+
+## Página Oficial
+
+```bash
+https://antoniomrtz.github.io/SpotifyElectron_Web/
+```
+
+---
+
+# 📚 Documentación
+
+## Docs del Proyecto
+
+```bash
+docs/
+```
+
+Incluye:
+
+- ⚙️ Configuración
+- 🏗️ Arquitectura
+- 🖥️ Frontend
+- ⚡ Backend
+- 🤝 Contribuciones
+
+---
+
+# 🚀 Funcionalidades Completadas
+
+## ✅ Implementado
+
+- 🎵 Streaming multimedia
+- 📂 Upload de música
+- 🎶 Biblioteca musical
+- ⚛️ Frontend React
+- ⚡ Backend FastAPI
+- ☁️ MongoDB integration
+- 🖥️ Electron desktop app
+- 🔐 Arquitectura full stack
+
+---
+
+# 📊 Roadmap
+
+## 🚧 Próximamente
+
+- ❤️ Favoritos inteligentes
+- 🤖 Recomendaciones IA
+- ☁️ Sincronización en la nube
+- 📱 Aplicación móvil
+- 🎧 Letras sincronizadas
+- 👥 Sistema social
+- 📡 Streaming avanzado
+- 🎼 Equalizer
+
+---
+
+# 🤝 Contribuciones
+
+Las contribuciones son bienvenidas ❤️
+
+## Pasos para contribuir
+
+1. Haz Fork del proyecto
+2. Crea una rama
+
+```bash
+git checkout -b feature/nueva-funcion
+```
+
+3. Realiza tus cambios
+4. Haz commit
+
+```bash
+git commit -m "✨ Nueva funcionalidad"
+```
+
+5. Haz push
+
+```bash
+git push origin feature/nueva-funcion
+```
+
+6. Abre un Pull Request 🚀
+
+---
+
+# 👨‍💻 Contributors
+
+Gracias a todos los desarrolladores que hacen posible este proyecto 🎵
+
+<div align="center">
+
+⭐ Comunidad Open Source  
+🚀 Desarrollo colaborativo  
+🎧 Innovación multimedia
+
+</div>
+
+---
+
+# 👨‍💻 Autor
+
+<div align="center">
+
+<img src="https://github.com/isairey.png" width="120" style="border-radius:50%" />
+
+## Isai Reyes
+
+Desarrollador Full Stack apasionado por aplicaciones multimedia, streaming y arquitecturas modernas.
+
+</div>
+
+---
+
+# 🌟 Apoya el Proyecto
+
+Si te gusta Spotify Electron:
+
+⭐ Dale una estrella al repositorio  
+🍴 Haz Fork del proyecto  
+📢 Compártelo con otros desarrolladores
+
+---
+
+# 📜 Licencia
+
+Este proyecto está bajo la licencia **MIT**.
+
+---
+
+# ⚠️ Disclaimer
+
+> Spotify Electron es un proyecto open source desarrollado con fines educativos y multimedia.
+> El contenido reproducido pertenece a sus respectivos propietarios.
+
+---
+
+<div align="center">
+
+### 🎶 Spotify Electron — Streaming de música moderno para escritorio.
+
+</div>
